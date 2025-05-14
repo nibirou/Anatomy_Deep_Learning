@@ -19,3 +19,15 @@ def conv1d(x,w,pad):
         y[i] = np.sum(x_pad[i:i+K]*w)
     return y
 
+np.random.seed(5)
+x = np.random.randint(low=1, high=30, size=10,dtype='l')
+print(x)
+w = np.array([1.2,0.3,0.5])
+
+y1 = conv1d(x,w,1)    #same卷积
+print(x.size,w.size,y1.size)
+print("same: ", y1) 
+
+y2 = conv1d(x,w,2)     #full卷积
+print(x.size,w.size,y2.size)
+print("full: ", y2) 
